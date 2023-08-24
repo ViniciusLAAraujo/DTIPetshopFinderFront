@@ -1,6 +1,8 @@
 import './App.css';
 import api from './api/axiosConfig'
 import {useState, useEffect} from 'react';
+import BestPetShopPage from './api/bestPetshopPage';
+import { BrowserRouter as Router, Routes,Route, Link } from 'react-router-dom';
 
 function App() {
 
@@ -23,8 +25,30 @@ function App() {
   },[])
 
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/best-petshop">Melhor petshop</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/best-petshop" element={<BestPetShopPage petshops={petshops} />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
+function Home() {
+  return <p>Home Page</p>;
+}
+
 export default App;
