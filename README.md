@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Frontend do desafio Petshop DTI 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/afaf4231-5c94-4d29-ba62-55d5e4a7a3ac" alt="logo" width="250" height="250">
+</p>
 
-## Available Scripts
+## Instruções para Executar o Sistema
 
-In the project directory, you can run:
+Para executar o projeto, é essencial garantir que o Node.js esteja instalado em seu sistema.
 
-### `npm start`
+1. Certifique-se de que o backend do projeto (Spring) esteja em execução e acessível no endereço `http://localhost:8080`. Ou altere para o endereço correto em `{root}/petshop-dti\src\api\axiosConfig.js` a String **baseURL**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Abra um terminal na pasta raiz do projeto .
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Execute os seguintes comandos para iniciar o aplicativo React:
 
-### `npm test`
+```bash
+npm install # Para instalar as dependências do projeto 
+npm start   # Para iniciar 
+```
+4. O aplicativo React será iniciado e estará disponível em `http://localhost:3000` no seu navegador padrão.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Premissas Assumidas
 
-### `npm run build`
+- Apenas um usuario
+- Não necessidade de autenticação
+- Distancia fixa entre o canil e petshops
+- Apenas petshops em um mesmo TimeZone (sem a necessidade de verificar se finais de semana são diferentes entre as duas localidades. Isso também assume que o banco esta na mesma localidade)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Decisões de Projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React como blibloteca principal.
+- As rotas são gerenciadas usando o React Router.
+- A interface do usuário é estilizada com o uso do Bootstrap. Isso agiliza na construção de um design responsivo. Do modo que foi aplicado não sendo necessario redimencionar conteudos utilizando css media queries
+- A comunicação com o backend é realizada através de requisições XMLHttpRequest usando a biblioteca Axios.
 
-### `npm run eject`
+### Descrição do Problema
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O projeto tem como objetivo encontrar o melhor petshop dentre um conjunto de petshops, considerando diferentes preços para cães pequenos e grandes, que variam de acordo com os dias da semana. A proximidade do petshop em relação ao canil também é considerada em caso de empate nos preços.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Como Usar o Sistema
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Navegue para a página inicial clicando em "PetshopDTI" ou na logo no menu de navegação. Nela se encontra uma descrição do problema.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Na página "Melhor Petshop" `/best-petshop`, você pode inserir a data do banho, a quantidade de cães pequenos e a quantidade de cães grandes.
 
-## Learn More
+3. Clique no botão "Encontrar" para descobrir qual petshop oferece o melhor preço com base na proximidade e custo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. O resultado será exibido na página, incluindo o nome do melhor petshop, distância em quilômetros, custo total e custos separados para cães pequenos e grandes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. A lista de petshops e preços pode ser visualizada na pagina "Lista de Petshops" `/all-petshops`.
 
-### Code Splitting
+### Logo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- A logo do site foi criada a partir do Bing Image Creator disponivel em : https://www.bing.com/create
