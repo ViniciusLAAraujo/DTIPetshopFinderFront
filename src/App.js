@@ -1,8 +1,10 @@
 import './App.css';
 import api from './api/axiosConfig'
 import {useState, useEffect} from 'react';
-import BestPetShopPage from './api/bestPetshopPage';
-import { BrowserRouter as Router, Routes,Route, Link } from 'react-router-dom';
+import BestPetShopPage from './components/bestPetshopPage';
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
+import Header from './components/Header/header';
+import Home from './components/Home/home';
 
 function App() {
 
@@ -12,9 +14,6 @@ function App() {
 
     try{
       const response = await api.get("/petshop");
-
-      console.log(response.data);
-    
       setPetshops(response.data);}
     catch (err){
       console.log(err);}
@@ -27,17 +26,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/best-petshop">Melhor petshop</Link>
-            </li>
-          </ul>
-        </nav>
-
+        <Header/>
         <Routes>
           <Route path="/best-petshop" element={<BestPetShopPage petshops={petshops} />} />
           <Route path="/" element={<Home />} />
@@ -47,8 +36,5 @@ function App() {
   );
 }
 
-function Home() {
-  return <p>Home Page</p>;
-}
 
 export default App;
