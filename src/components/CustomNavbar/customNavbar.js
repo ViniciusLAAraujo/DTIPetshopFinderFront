@@ -18,7 +18,7 @@ export default function CustomNavbar() {
             <Link to="/best-petshop" className="nav-link">
               Melhor petshop
             </Link>
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/all-petshops">Lista de Petshops</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
