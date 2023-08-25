@@ -1,5 +1,5 @@
 import './App.css';
-import BestPetShopPage from './components/bestPetshopPage';
+import BestPetShopPage from './components/BestPetshopPage/bestPetshopPage';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import Header from './components/Header/header';
 import Home from './components/Home/home';
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App" >
         <Header/>
         <Routes>
           <Route path="/best-petshop" element={<BestPetShopPage />} />
