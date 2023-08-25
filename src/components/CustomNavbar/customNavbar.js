@@ -6,7 +6,7 @@ import "./customNavbar.css";
 
 export default function CustomNavbar() {
   return (
-    <Navbar bg="body-tertiary" expand="lg" >
+    <Navbar  expand="lg" id="navbar">
       <Container fluid>
         <Link to="/" className="navbar-brand">
           <Logo className="nav-img"/>
