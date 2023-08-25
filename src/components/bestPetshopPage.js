@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import api from '../api/axiosConfig';
-import { Container, Form, Row, Col, Button, Card } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Container, Form, Row, Col, Button, Card } from 'react-bootstrap';
+import petshopService from '../services/petshopService';
 
 function BestPetShopPage() {
   const [searchDTO, setSearchDTO] = useState({
@@ -14,12 +14,13 @@ function BestPetShopPage() {
     e.preventDefault();
 
     try {
-      const response = await api.post('/petshop/best', searchDTO);
-      setBestPetShop(response.data);
+      const response = await petshopService.getBestPetShop(searchDTO);
+      setBestPetShop(response);
     } catch (err) {
       console.error('Erro ao recuperar o melhor petshop:', err);
     }
   };
+
 
   return (
     <Container>
@@ -120,6 +121,7 @@ function BestPetShopPage() {
       </Card.Body>
     </Card>
     )}
+    <br></br>
   </Container>
   );
 }
