@@ -1,8 +1,18 @@
-# Frontend do desafio Petshop DTI 
+# Frontend desafio Petshop DTI 
 
 <p align="center">
-  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/afaf4231-5c94-4d29-ba62-55d5e4a7a3ac" alt="logo" width="250" height="250">
+  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinder/assets/90988825/c6d3a421-a13f-48ae-a014-d75f883d5ce2" alt="logo" width="250" height="250">
 </p>
+
+## Tabela de Conteudos
+
+- [Frontend desafio Petshop DTI](#frontend-desafio-petshop-dti)
+- [Instruções para Executar o Sistema](#instruções-para-executar-o-sistema)
+- [Premissas Assumidas](#premissas-assumidas)
+- [Decisões de Projeto](#decisões-de-projeto)
+- [Descrição do Problema](#descrição-do-problema)
+- [Como Usar o Sistema](#como-usar-o-sistema)
+- [Logo](#logo)
 
 ## Instruções para Executar o Sistema
 
@@ -23,7 +33,7 @@ npm start   # Para iniciar
 ## Premissas Assumidas
 
 - Apenas um usuario
-- Não necessidade de autenticação
+- Sem necessidade de autenticação
 - Distancia fixa entre o canil e petshops
 - Apenas petshops em um mesmo TimeZone (sem a necessidade de verificar se finais de semana são diferentes entre as duas localidades. Isso também assume que o banco esta na mesma localidade)
 
