@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Col, Button, Card } from 'react-bootstrap';
-import PetshopService from '../services/petshopService';
-import PositiveNumberInput from '../utils/positiveNumberInput';
+import PetshopService from '../../services/petshopService';
+import PositiveNumberInput from '../../utils/positiveNumberInput';
+import "./bestPetshopPage.css"
 
 function BestPetShopPage() {
   const [searchDTO, setSearchDTO] = useState({
@@ -64,53 +65,24 @@ function BestPetShopPage() {
         />
       </Form.Group>
       <br></br>
-      <Button type="submit" variant="info">Encontrar</Button>
+      <Button type="submit" id="findbutton">Encontrar</Button>
     </Form>
     <br></br>
-    {bestPetShop && (
-    <Card>
-      <Card.Header>
-        <h2 className="text-center">O melhor petshop para esses termos é:</h2>
-      </Card.Header>
-      <Card.Body>
-
-        <Card.Title className="text-center">{bestPetShop.name}</Card.Title>
-
-        <Row>
-          <Col md={6}>
-            <Card.Text className="text-center">Distância em Km:</Card.Text>
-          </Col>
-          <Col md={6}>
-            <Card.Text className="text-center">{bestPetShop.kmDistance.toFixed(2)} km</Card.Text>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6}>
-            <Card.Text className="text-center">Total a pagar:</Card.Text>
-          </Col>
-          <Col md={6}>
-            <Card.Text className="text-center">R$ {bestPetShop.totalAmount.toFixed(2)}</Card.Text>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6}>
-            <Card.Text className="text-center">Total dos pequenos:</Card.Text>
-          </Col>
-          <Col md={6}>
-            <Card.Text className="text-center">R$ {bestPetShop.smallDogAmount.toFixed(2)}</Card.Text>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6}>
-            <Card.Text className="text-center">Total dos grandes:</Card.Text>
-          </Col>
-          <Col md={6}>
-            <Card.Text className="text-center">R$ {bestPetShop.bigDogAmount.toFixed(2)}</Card.Text>
-          </Col>
-        </Row>
-      </Card.Body>
-    </Card>
-    )}
+    <Row className="justify-content-center">
+      {bestPetShop && (
+        <Card id="bestpetshopcard">
+          <Card.Header>
+            <h5 className="text-center">{bestPetShop.name} </h5>
+            <h6 className="text-center">{bestPetShop.kmDistance.toFixed(2)} km </h6>
+          </Card.Header>
+          <Card.Body>
+            <Card.Title className="text-center">R$ {bestPetShop.totalAmount.toFixed(2)}</Card.Title>
+            <Card.Text className="text-center">Preço pequenos: R$ {bestPetShop.smallDogAmount.toFixed(2)}</Card.Text>
+            <Card.Text className="text-center">Preço grandes: R$ {bestPetShop.bigDogAmount.toFixed(2)}</Card.Text>
+          </Card.Body>
+        </Card>
+        )}   
+    </Row>
     <br></br>
   </Container>
   );
