@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Col, Button, Card } from 'react-bootstrap';
-import petshopService from '../services/petshopService';
+import PetshopService from '../services/petshopService';
+import PositiveNumberInput from '../utils/positiveNumberInput';
 
 function BestPetShopPage() {
   const [searchDTO, setSearchDTO] = useState({
@@ -14,7 +15,7 @@ function BestPetShopPage() {
     e.preventDefault();
 
     try {
-      const response = await petshopService.getBestPetShop(searchDTO);
+      const response = await PetshopService.getBestPetShop(searchDTO);
       setBestPetShop(response);
     } catch (err) {
       console.error('Erro ao recuperar o melhor petshop:', err);
@@ -24,40 +25,29 @@ function BestPetShopPage() {
 
   return (
     <Container>
+    <br></br>
     <h1 className="text-center">Encontre o melhor Petshop</h1>
     <Form onSubmit={handleSearch}>
       <Row>
         
         <Col md={6}>
-          <Form.Group>
-            <Form.Label>Número de cães pequenos:</Form.Label>
-            <Form.Control
-              type="number"
+            <PositiveNumberInput
+              label="Número de cães pequenos:"
               value={searchDTO.numSmallDog}
-              onChange={(e) =>
-                setSearchDTO({
-                  ...searchDTO,
-                  numSmallDog: parseInt(e.target.value),
-                })
+              onChange={(value) =>
+                setSearchDTO({ ...searchDTO, numSmallDog: value })
               }
             />
-          </Form.Group>
         </Col>
 
         <Col md={6}>
-          <Form.Group>
-            <Form.Label>Número de cães grandes:</Form.Label>
-            <Form.Control
-            type="number"
-            value={searchDTO.numBigDog}
-            onChange={(e) =>
-              setSearchDTO({
-                ...searchDTO,
-                numBigDog: parseInt(e.target.value),
-              })
-            }
+          <PositiveNumberInput
+              label="Número de cães grandes:"
+              value={searchDTO.numBigDog}
+              onChange={(value) =>
+                setSearchDTO({ ...searchDTO, numBigDog: value })
+              }
             />
-          </Form.Group>
         </Col>
       </Row>
       <Form.Group>
