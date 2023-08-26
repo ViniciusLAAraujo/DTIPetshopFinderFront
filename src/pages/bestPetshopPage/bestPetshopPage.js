@@ -5,15 +5,17 @@ import PositiveNumberInput from '../../utils/positiveNumberInput';
 import "./bestPetshopPage.css";
 
 function BestPetShopPage() {
+  // Hook de estado que verifica mudanças na variavel serachDTO(que representa os valores do formulario) 
   const [searchDTO, setSearchDTO] = useState({
     date: '',
     numSmallDog: 0,
     numBigDog: 0,
   });
-  const [bestPetShop, setBestPetShop] = useState(null);
+  const [bestPetShop, setBestPetShop] = useState(null); //Hook que acompanha a variavel bestPetShop e suas mudanças
 
+  //Função executada apos o envio do formulara, chama o servico que acessa a API
   const handleSearch = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); //Impede que ao enviar a pagina seja recarregada
       await PetshopService.getBestPetShop(searchDTO)
       .then((response) =>{
         setBestPetShop(response)
@@ -22,6 +24,7 @@ function BestPetShopPage() {
       }) 
   };
 
+  //Função que recebe um numero o formata em duas strings valores antes da casa decimal e apos a casa e as retorna
   const splitDecimal = ((number) => {
     
    let strNumber = number.toFixed(2).toString()

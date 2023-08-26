@@ -3,8 +3,9 @@ import PetshopService from '../../services/petshopService';
 import { Card, Button, Container } from 'react-bootstrap';
 import './allPetshopPage.css';
 
+//Função que acessa os servições para realizar uma chamada a aplicação backend que retorne um JSON com todos os petshops do banco
 function AllPetshopsPage() {
-  const [petshops, setPetshops] = useState([]);
+  const [petshops, setPetshops] = useState([]); //Hook que atualiza o valor da variavel petshop a partir da função setPetshop
 
   const fetchAllPetshops = async () => {
     try {
@@ -15,6 +16,8 @@ function AllPetshopsPage() {
     }
   };
 
+  //Hook useEffect executa a função apos o render dos componentes e em qualquer atualização subsequente, porem com o argumento [] 
+  // indica que o efeito só deve ocorrer na inicialização
   useEffect(() => {
     fetchAllPetshops();
   }, []);
