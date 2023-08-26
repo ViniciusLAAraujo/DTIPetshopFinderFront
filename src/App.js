@@ -1,9 +1,9 @@
 import './App.css';
-import BestPetShopPage from './components/BestPetshopPage/bestPetshopPage';
+import BestPetShopPage from './pages/bestPetshopPage/bestPetshopPage';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
-import Header from './components/Header/header';
-import Home from './components/Home/home';
-import AllPetshopsPage from './components/allPetshopPage';
+import Header from './components/header/header';
+import Home from './pages/home/home';
+import AllPetshopsPage from './pages/allPetshopPage/allPetshopPage';
 
 function App() {
 

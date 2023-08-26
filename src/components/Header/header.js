@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../CustomNavbar/customNavbar';
+import Navbar from '../customNavbar/customNavbar';
 
 function Header() {
   return (

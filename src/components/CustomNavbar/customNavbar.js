@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Logo from "../Logo/logo";
+import Logo from "../logo/logo";
 import "./customNavbar.css";
 
 export default function CustomNavbar() {

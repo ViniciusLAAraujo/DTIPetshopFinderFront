@@ -1,5 +1,5 @@
 import React from 'react';
-import newLogo from './dtilogo.png';
+import newLogo from '../../assets/dtilogo.png';
 
 function DTILogo({ className }) {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import newLogo from './logo.png';
+import newLogo from '../../assets/logo.png';
 
 function Logo({ className }) {
   return (
