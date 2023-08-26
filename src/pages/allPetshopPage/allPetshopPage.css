@@ -1,0 +1,17 @@
+.cardlistitem {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .cardlistitem .btn-primary {
+    background-color: #28b8c0;
+    border-color: #28b8c0;
+    color: #fff; 
+  }
+  
+  .cardlistitem .btn-primary:hover {
+    background-color: #1e8c94;
+    border-color: #1e8c94;
+  }
+  

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import Logo from '../Logo/logo';
-import DTILogo from '../DTILogo/dtilogo';
+import Logo from '../../components/logo/logo';
+import DTILogo from '../../components/dtilogo/dtilogo';
 import './home.css';
 
 function Home() {
@@ -14,10 +14,10 @@ function Home() {
         </Col>
         <Col md={4}>
           <Row>
-            <h1 className="text-center">Petshop</h1>
+            <h1 className="text-center hometitle">Petshop</h1>
           </Row>
           <Row>
-            <h1 className="text-center">DTI Digital</h1>
+            <h1 className="text-center hometitle">DTI Digital</h1>
           </Row>
         </Col>
         <Col md={4} className="img-col">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Row, Col, Button, Card } from 'react-bootstrap';
 import PetshopService from '../../services/petshopService';
 import PositiveNumberInput from '../../utils/positiveNumberInput';
-import "./bestPetshopPage.css"
+import "./bestPetshopPage.css";
 
 function BestPetShopPage() {
   const [searchDTO, setSearchDTO] = useState({
@@ -14,14 +14,21 @@ function BestPetShopPage() {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await PetshopService.getBestPetShop(searchDTO);
-      setBestPetShop(response);
-    } catch (err) {
-      console.error('Erro ao recuperar o melhor petshop:', err);
-    }
+      await PetshopService.getBestPetShop(searchDTO)
+      .then((response) =>{
+        setBestPetShop(response)
+      }).catch ((err) => {
+        console.error('Erro ao recuperar o melhor petshop:', err);
+      }) 
   };
+
+  const splitDecimal = ((number) => {
+    
+   let strNumber = number.toFixed(2).toString()
+   let numInt = strNumber.split(".")[0]
+   let numDec = strNumber.split(".")[1]
+   return {numInt,numDec}
+  })
 
 
   return (
@@ -70,17 +77,22 @@ function BestPetShopPage() {
     <br></br>
     <Row className="justify-content-center">
       {bestPetShop && (
+        <>
+        <h3 className="text-center">O melhor petshop é:</h3>
+        <br></br>
+        
         <Card id="bestpetshopcard">
           <Card.Header>
-            <h5 className="text-center">{bestPetShop.name} </h5>
-            <h6 className="text-center">{bestPetShop.kmDistance.toFixed(2)} km </h6>
+            <h5 className="text-center bestpetshopname">{bestPetShop.name} </h5>
+            <h6 className="text-center bestpetshopkm">{bestPetShop.kmDistance.toFixed(2)} km </h6>
           </Card.Header>
           <Card.Body>
-            <Card.Title className="text-center">R$ {bestPetShop.totalAmount.toFixed(2)}</Card.Title>
-            <Card.Text className="text-center">Preço pequenos: R$ {bestPetShop.smallDogAmount.toFixed(2)}</Card.Text>
-            <Card.Text className="text-center">Preço grandes: R$ {bestPetShop.bigDogAmount.toFixed(2)}</Card.Text>
+            <Card.Title className="text-center"><span className="totalamountbig">R${splitDecimal(bestPetShop.totalAmount).numInt}</span><span className="totalamountsmall">.{splitDecimal(bestPetShop.totalAmount).numDec}</span></Card.Title>
+            <Card.Text className="text-center cardtextprices">Total pequenos: R$ {bestPetShop.smallDogAmount.toFixed(2)}</Card.Text>
+            <Card.Text className="text-center cardtextprices">Total grandes: R$ {bestPetShop.bigDogAmount.toFixed(2)}</Card.Text>
           </Card.Body>
         </Card>
+        </>
         )}   
     </Row>
     <br></br>

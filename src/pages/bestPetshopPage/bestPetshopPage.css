@@ -1,0 +1,40 @@
+#findbutton{
+    background-color: #28b8c0;
+    border-color: #28b8c0;
+    color: #fff; 
+}
+
+#findbutton:hover{
+    background-color: #1e8c94;
+    border-color: #1e8c94;
+}
+
+#bestpetshopcard{
+    max-width: 220px;
+    align-self: center;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bestpetshopkm{
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.totalamountbig{
+    font-size: 2rem;
+    line-height: 1.167;
+}
+
+.totalamountsmall{
+    letter-spacing: 0.0075em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.cardtextprices{
+    margin: 0;
+    padding: 0;
+}
