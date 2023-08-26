@@ -1,16 +1,16 @@
 # Frontend desafio Petshop DTI 
 
 <p align="center">
-  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinder/assets/90988825/c6d3a421-a13f-48ae-a014-d75f883d5ce2" alt="logo" width="250" height="250">
+  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/0c1b7764-b093-40f7-8044-287aa06937cb" alt="logo" width="250" height="250">
 </p>
 <p align="center">
-  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/4df3a4e8-d6f3-4fbc-b6cd-94442d0050e6" alt="logo" >
+  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/6f917035-a704-4284-a6c7-3464eb81597d" alt="logo" >
 </p>
 <p align="center">
-  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/af36a70c-bb33-49df-8518-be795495925c" alt="logo" >
+  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/3ae35220-0591-403f-8da3-5a14112a888b" alt="logo" >
 </p>
 <p align="center">
-  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/db38f5ed-8d8c-441d-bc6b-c161c0efaf8f" alt="logo" >
+  <img src="https://github.com/ViniciusLAAraujo/DTIPetshopFinderFront/assets/90988825/e4ef6d99-f69f-4f5f-aef6-9fcc243461a3" alt="logo" >
 </p>
 
 
