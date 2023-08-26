@@ -10,6 +10,7 @@
 - [Instruções para Executar o Sistema](#instruções-para-executar-o-sistema)
 - [Premissas Assumidas](#premissas-assumidas)
 - [Decisões de Projeto](#decisões-de-projeto)
+- [Organização de Pastas no Projeto React](#organização-de-pastas-no-projeto-react)  <!-- Nova seção -->
 - [Descrição do Problema](#descrição-do-problema)
 - [Como Usar o Sistema](#como-usar-o-sistema)
 - [Logo](#logo)
@@ -44,6 +45,21 @@ npm start   # Para iniciar
 - As rotas são gerenciadas usando o React Router.
 - A interface do usuário é estilizada com o uso do Bootstrap. Isso agiliza na construção de um design responsivo. Do modo que foi aplicado não sendo necessario redimencionar conteudos utilizando css media queries
 - A comunicação com o backend é realizada através de requisições XMLHttpRequest usando a biblioteca Axios.
+
+## Organização de Pastas no Projeto React
+
+Dentro da pasta `src` do nosso projeto React, segue a estrutura utilizada e razões pela das tomadas de decisão:
+
+- **api**: Contém a configuração do Axios com o `baseURL`, que é usado para fazer chamadas à API.
+
+- **assets**: armazenamos todas as imagens, como logotipos e ícones, que serão utilizadas em nossa aplicação.
+
+- **components**: contém todos os componentes reutilizáveis para construção da aplicação.
+
+- **pages**: Páginas da aplicação.
+
+- **utils**: Validação e utilitarios reutilizável (Presente validação de campos inteiros em entrada de formulários).
+
 
 ### Descrição do Problema
 
